@@ -1,0 +1,72 @@
+// https://github.com/tch0/MyConfigurations/blob/master/VsCodeCppConfig/launch.json
+{
+    "configurations": [
+    // normal configuration: g++ compile single C++ files.
+    {
+        "name": "gdb debug single file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
+        "setupCommands": [
+            {
+                "description": "pretty printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "C/C++: g++ compile single file"
+    },
+    // make: g++ compile single files.
+    {
+        "name": "make and gdb debug single file",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/${fileBasenameNoExtension}",
+        "args": [],
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
+        "setupCommands": [
+            {
+                "description": "pretty printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "C/C++: make compile single file"
+    },
+    // make: g++ compile all source files into one executable.
+    {
+        "name": "make and gdb debug one target",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "${fileDirname}/ReplaceWithYourTarget", // replace with your target filename
+        "args": [], // add your start arguments
+        "stopAtEntry": false,
+        "cwd": "${fileDirname}",
+        "environment": [],
+        "externalConsole": false,
+        "MIMode": "gdb",
+        "miDebuggerPath": "gdb",
+        "setupCommands": [
+            {
+                "description": "pretty printing for gdb",
+                "text": "-enable-pretty-printing",
+                "ignoreFailures": true
+            }
+        ],
+        "preLaunchTask": "C/C++: make compile all files into one target"
+    }
+    ],
+    "version": "2.0.0"
+}

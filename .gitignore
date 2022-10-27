@@ -1,0 +1,37 @@
+# https://github.com/tch0/MyConfigurations/blob/master/GitIgnore/Cpp.gitignore
+
+# all files ignored, for all generated binary files
+*
+
+# track all directories
+!*/
+
+# .vscode configuration files
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# track .gitignore .editorconfig
+!.gitignore
+!.editorconfig
+
+# track *.c *.h *.cpp source files
+!*.c
+!*.cpp
+!*.h
+!*.hpp
+!*.cc
+
+# track makefiles
+!Makefile
+!makefile
+
+# track README.md
+!README.md
+
+# track LICENSE
+!LICENSE
+
+# track test .txt files
+!*.txt
+
+# add all specific files that need to be tracked here

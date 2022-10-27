@@ -1,0 +1,65 @@
+// https://github.com/tch0/MyConfigurations/blob/master/VsCodeCppConfig/tasks.json
+{
+    "tasks": [
+        // nromal configuration: g++ compile single C++ files.
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++ compile single file",
+            "command": "g++",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}/${fileBasenameNoExtension}",
+                "-Wall",
+                "-std=c++20"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "defualt task"
+        },
+        // make: compile single files.
+        {
+            "type": "cppbuild",
+            "label": "C/C++: make compile single file",
+            "command": "make",
+            "args": [
+                "debug=yes",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": ""
+        },
+        // make: compile all files into one target.
+        {
+            "type": "cppbuild",
+            "label": "C/C++: make compile all files into one target",
+            "command": "make",
+            "args": [
+                "debug=yes"
+                // add your target name here if necessary
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": ""
+        }
+    ],
+    "version": "2.0.0"
+}
