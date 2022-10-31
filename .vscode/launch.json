@@ -50,7 +50,7 @@
         "name": "make and gdb debug one target",
         "type": "cppdbg",
         "request": "launch",
-        "program": "${fileDirname}/ReplaceWithYourTarget", // replace with your target filename
+        "program": "${fileDirname}/test", // replace with your target filename
         "args": [], // add your start arguments
         "stopAtEntry": false,
         "cwd": "${fileDirname}",
