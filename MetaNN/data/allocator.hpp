@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_ALLOCATOR_HPP_
-#define METANN_ALLOCATOR_HPP_
 
 #include <data/tags.hpp>
 #include <memory>
@@ -69,5 +67,3 @@ private:
 };
 
 } // namespace MetaNN
-
-#endif // METANN_ALLOCATOR_HPP_

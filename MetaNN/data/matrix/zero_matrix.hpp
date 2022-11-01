@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_ZERO_MATRIX_HPP_
-#define METANN_ZERO_MATRIX_HPP_
 
 #include <data/tags.hpp>
 #include <type_traits>
@@ -45,5 +43,3 @@ private:
 };
 
 } // namespace MetaNN
-
-#endif // METANN_ZERO_MATRIX_HPP_

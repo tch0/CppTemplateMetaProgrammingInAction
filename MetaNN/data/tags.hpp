@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_TAGS_HPP_
-#define METANN_TAGS_HPP_
 
 namespace MetaNN
 {
@@ -22,5 +20,3 @@ struct DeviceTags
 };
 
 } // namespace MetaNN
-
-#endif // METANN_TAGS_HPP_

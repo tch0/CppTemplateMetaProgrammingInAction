@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_LOWER_ACCESS_HPP_
-#define METANN_LOWER_ACCESS_HPP_
 
 #include <type_traits>
 
@@ -29,5 +27,3 @@ concept LowerAccessC = requires
 };
 
 } // namespace MetaNN
-
-#endif // METANN_LOWER_ACCESS_HPP_

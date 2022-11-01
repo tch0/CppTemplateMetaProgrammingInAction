@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_TRATIS_HPP_
-#define METANN_TRATIS_HPP_
 
 #include <data/tags.hpp>
 #include <type_traits>
@@ -122,5 +120,3 @@ template<typename T>
 concept BatchMatrixC = IsBatchMatrixC<std::remove_cvref_t<T>>;
 
 } // namespace MetaNN
-
-#endif // METANN_TRATIS_HPP_

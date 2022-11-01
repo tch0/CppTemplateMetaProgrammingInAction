@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_ARRAY_HPP_
-#define METANN_ARRAY_HPP_
 
 #include <data/traits.hpp>
 #include <type_traits>
@@ -245,5 +243,3 @@ auto makeArray(TIterator beg, TIterator end)
 }
 
 } // namespace MetaNN
-
-#endif // METANN_ARRAY_HPP_

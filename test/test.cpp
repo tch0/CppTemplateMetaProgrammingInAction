@@ -57,8 +57,7 @@ void test_batch()
     static_assert(BatchMatrixC<Duplicate<Matrix<double>>>);
 }
 
-int main(int argc, char const *argv[])
+int main()
 {
-    
     return 0;
 }

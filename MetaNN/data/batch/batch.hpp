@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_BATCH_HPP_
-#define METANN_BATCH_HPP_
 
 #include <data/tags.hpp>
 #include <data/lower_access.hpp>
@@ -194,5 +192,3 @@ private:
 };
 
 } // namespace MetaNN
-
-#endif // METANN_BATCH_HPP_

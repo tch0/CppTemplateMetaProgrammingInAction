@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_MATRIX_HPP_
-#define METANN_MATRIX_HPP_
 
 #include <data/tags.hpp>
 #include <data/allocator.hpp>
@@ -125,5 +123,3 @@ private:
 };
 
 } // namespace MetaNN
-
-#endif // METANN_MATRIX_HPP_

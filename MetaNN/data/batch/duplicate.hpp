@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_DUPLICATE_HPP_
-#define METANN_DUPLICATE_HPP_
 
 namespace MetaNN
 {
@@ -104,5 +102,3 @@ auto makeDupliate(std::size_t batchNum, Args&&... args)
 }
 
 } // namespace MetaNN
-
-#endif // METANN_DUPLICATE_HPP_

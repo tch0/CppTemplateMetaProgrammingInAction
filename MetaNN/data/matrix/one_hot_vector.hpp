@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_ONE_HOT_VECTOR_HPP_
-#define METANN_ONE_HOT_VECTOR_HPP_
 
 #include <data/tags.hpp>
 
@@ -47,5 +45,3 @@ private:
 };
 
 } // namespace MetaNN
-
-#endif // METANN_ONE_HOT_VECTOR_HPP_

@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_SCALAR_HPP_
-#define METANN_SCALAR_HPP_
 
 #include <data/tags.hpp>
 #include <type_traits>
@@ -41,5 +39,3 @@ private:
 };
 
 } // namespace MetaNN
-
-#endif // METANN_SCALAR_HPP_

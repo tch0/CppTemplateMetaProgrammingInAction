@@ -1,6 +1,4 @@
 #pragma once
-#ifndef METANN_TRIVIAL_MATRIX_HPP_
-#define METANN_TRIVIAL_MATRIX_HPP_
 
 #include <data/tags.hpp>
 #include <data/traits.hpp>
@@ -74,5 +72,3 @@ auto makeTrivialMatrix(std::size_t row, std::size_t col, TVal&& val)
 }
 
 } // namespace MetaNN
-
-#endif // METANN_TRIVIAL_MATRIX_HPP_
