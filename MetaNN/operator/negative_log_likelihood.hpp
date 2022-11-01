@@ -11,13 +11,13 @@ namespace MetaNN
 //      矩阵列表与矩阵列表：输出为标量列表
 
 template<>
-struct OpCategory_<BinaryOpTags::NegativeLogLikelihood, CategoryTags::Matrix>
+struct OpCategory_<BinaryOpTags::NegativeLogLikelihood, CategoryTags::Matrix, CategoryTags::Matrix>
 {
     using type = CategoryTags::Scalar;
 };
 
 template<>
-struct OpCategory_<BinaryOpTags::NegativeLogLikelihood, CategoryTags::BatchMatrix>
+struct OpCategory_<BinaryOpTags::NegativeLogLikelihood, CategoryTags::BatchMatrix, CategoryTags::Matrix>
 {
     using type = CategoryTags::BatchScalar;
 };

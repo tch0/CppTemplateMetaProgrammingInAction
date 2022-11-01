@@ -7,8 +7,23 @@ namespace MetaNN
 
 // NegativeLogLikelihoodDerivation operation：三元运算符
 // 支持类型：
-//      矩阵、矩阵、矩阵
-//      矩阵列表、矩阵列表、矩阵列表
+//      标量、矩阵、矩阵：输出为矩阵
+//      标量列表、矩阵列表、矩阵列表：输出为矩阵列表
+
+template<>
+struct OpCategory_<TernaryOpTags::NegativeLogLikelihoodDerivation,
+                   CategoryTags::Scalar, CategoryTags::Matrix, CategoryTags::Matrix>
+{
+    using type = CategoryTags::Matrix;
+};
+
+template<>
+struct OpCategory_<TernaryOpTags::NegativeLogLikelihoodDerivation,
+                   CategoryTags::BatchScalar, CategoryTags::BatchMatrix, CategoryTags::BatchMatrix>
+{
+    using type = CategoryTags::BatchMatrix;
+};
+
 
 template<typename T1, typename T2, typename T3>
 class OpNegativeLogLikelihoodDerivation
