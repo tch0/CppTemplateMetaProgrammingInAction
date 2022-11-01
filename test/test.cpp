@@ -11,6 +11,28 @@
 #include <data/batch/batch.hpp>
 #include <data/batch/array.hpp>
 #include <data/batch/duplicate.hpp>
+#include <operator/tags.hpp>
+#include <operator/traits.hpp>
+#include <operator/organizer.hpp>
+#include <operator/operators.hpp>
+#include <operator/sigmoid.hpp>
+#include <operator/add.hpp>
+#include <operator/transpose.hpp>
+#include <operator/collapse.hpp>
+#include <operator/abs.hpp>
+#include <operator/sign.hpp>
+#include <operator/tanh.hpp>
+#include <operator/softmax.hpp>
+#include <operator/subtract.hpp>
+#include <operator/element_mul.hpp>
+#include <operator/divide.hpp>
+#include <operator/dot.hpp>
+#include <operator/negative_log_likelihood.hpp>
+#include <operator/softmax_derivation.hpp>
+#include <operator/sigmoid_derivation.hpp>
+#include <operator/tanh_derivation.hpp>
+#include <operator/negative_log_likelihood_derivation.hpp>
+#include <operator/interpolation.hpp>
 // standard library headers
 #include <iostream>
 
@@ -55,6 +77,11 @@ void test_batch()
     // Duplicate
     static_assert(BatchScalarC<Duplicate<Scalar<double>>>);
     static_assert(BatchMatrixC<Duplicate<Matrix<double>>>);
+}
+
+void test_OpCategory()
+{
+    static_assert(std::same_as<OpCateCal<Matrix<double>, ZeroMatrix<double>, OneHotVector<double>>, CategoryTags::Matrix>);
 }
 
 int main()

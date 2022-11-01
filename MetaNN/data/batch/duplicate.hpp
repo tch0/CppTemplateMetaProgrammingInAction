@@ -1,5 +1,9 @@
 #pragma once
 
+#include <data/tags.hpp>
+#include <data/traits.hpp>
+#include <cassert>
+
 namespace MetaNN
 {
 
@@ -10,7 +14,7 @@ template<typename TData>
 class Duplicate;
 
 // 标量重复列表
-template<typename TData> requires std::same_as<DataCategory<TData>, CategoryTags::Scalar>
+template<ScalarC TData>
 class Duplicate<TData>
 {
     static_assert(std::is_same_v<std::remove_cvref_t<TData>, TData>, "TData is not an available type");
@@ -43,7 +47,7 @@ private:
 };
 
 // 矩阵重复列表
-template<typename TData> requires std::same_as<DataCategory<TData>, CategoryTags::Matrix>
+template<MatrixC TData>
 class Duplicate<TData>
 {
     static_assert(std::is_same_v<std::remove_cvref_t<TData>, TData>, "TData is not an available type");

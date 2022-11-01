@@ -104,7 +104,7 @@ concept IsBatchScalarC = std::is_same_v<DataCategory<T>, CategoryTags::BatchScal
 
 // BatchMatrix
 template<typename T>
-concept IsBatchMatrixC = std::is_same_v<DataCategory<T>, CategoryTags::BatchMatrix> && ValidDataTypeC<T> && ValidBatchTypeC<T>;
+concept IsBatchMatrixC = std::is_same_v<DataCategory<T>, CategoryTags::BatchMatrix> && ValidDataTypeC<T> && ValidBatchTypeC<T> && ValidMatrixTypeC<T>;
 
 // 范围更广的类别判断概念，对引用和const修饰的复合类型则根据其底层类型判断
 template<typename T>
