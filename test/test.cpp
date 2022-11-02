@@ -33,6 +33,15 @@
 #include <operator/tanh_derivation.hpp>
 #include <operator/negative_log_likelihood_derivation.hpp>
 #include <operator/interpolation.hpp>
+
+#include <facility/var_type_dict.hpp>
+
+#include <policy/policy_container.hpp>
+#include <policy/policy_operations.hpp>
+#include <policy/policy_selector.hpp>
+
+#include <param_initializer/init_policy.hpp>
+
 // standard library headers
 #include <iostream>
 
