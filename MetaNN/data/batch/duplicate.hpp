@@ -98,7 +98,7 @@ auto makeDuplicate(std::size_t batchNum, TData&& data)
 }
 
 template<typename TData, typename... Args> requires ScalarC<TData> || MatrixC<TData>
-auto makeDupliate(std::size_t batchNum, Args&&... args) 
+auto makeDuplicate(std::size_t batchNum, Args&&... args) 
 {
     using RawDataType = std::remove_cvref_t<TData>;
     RawDataType tmp(std::forward<Args>(args)...);

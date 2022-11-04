@@ -6,13 +6,13 @@
 # make debug=yes to compile with -g
 # make system=windows for windows system
 
-.PHONY : all run
+.PHONY : all run rund
 .PHONY .IGNORE : clean
 
 # add your own include path/library path/link library to CXXFLAGS
 CXX = g++
 CXXFLAGS += -std=c++20
-CXXFLAGS += -Wall -Wextra -pedantic-errors -Wshadow
+CXXFLAGS += -Wall -Wextra -pedantic-errors -Wshadow -Wno-sign-compare -Wno-unused-parameter
 # CXXFLAGS += -Wfatal-errors
 CXXFLAGS += -I../MetaNN
 RM = rm
@@ -42,6 +42,8 @@ $(all_targets) : $(all_source_files)
 # run
 run : $(all_targets)
 	./$(all_targets)
+rund : $(all_targets)
+	./$(all_targets) -d
 
 # system: affect how to clean and executable file name
 # value: windows/unix

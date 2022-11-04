@@ -158,7 +158,7 @@ public:
     }
     std::size_t size() const
     {
-        return m_buffer->siz();
+        return m_buffer->size();
     }
     bool availableForWrite() const
     {
@@ -183,12 +183,12 @@ public:
         {
             throw std::runtime_error("Dimension mismatch");
         }
-        m_buffer.emplace_back(std::move(tmp));
+        m_buffer->emplace_back(std::move(tmp));
     }
     void reserve(std::size_t num)
     {
         assert(availableForWrite());
-        m_buffer.reserve(num);
+        m_buffer->reserve(num);
     }
     void clear()
     {

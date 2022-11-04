@@ -46,9 +46,9 @@ public:
     // 求值接口: todo
 
 private:
-    TScalar m_val;
     std::size_t m_rowNum;
     std::size_t m_colNum;
+    TScalar m_val;
     // 求值结果缓存: todo
 };
 
@@ -56,7 +56,7 @@ private:
 template<typename TElem, typename TDevice, typename TVal>
 auto makeTrivialMatrix(std::size_t row, std::size_t col, TVal&& val)
 {
-    using RawVal = std::remove_cvref<TVal>;
+    using RawVal = std::remove_cvref_t<TVal>;
     if constexpr (IsScalarC<RawVal>)
     {
         static_assert(std::is_same_v<typename RawVal::DeviceType, TDevice> ||

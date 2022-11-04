@@ -149,12 +149,23 @@ public:
         assert(rowBegin < m_rowNum && colBegin < m_colNum);
         assert(rowend <= m_rowNum && colEnd <= m_colNum);
         auto pos = m_mem.rawMemory() + rowBegin * m_rowLen + colBegin;
-        return Matrix<ElementType, DeviceType>(m_mem.sharedPtr(), pos, rowEnd - rowBegin, colEnd - colBegin, m_rowLen);
+        return Batch(m_mem.sharedPtr(), pos, rowEnd - rowBegin, colEnd - colBegin, m_batchNum, m_rowLen, m_rawMatrixSize);
     }
 
     // 求值接口: todo
 
 private:
+    Batch(std::shared_ptr<ElementType> sp, ElementType* pMemStart,
+        std::size_t row, std::size_t col, std::size_t batchNum, std::size_t rowLen, std::size_t matrixSize)
+        : m_mem(sp, pMemStart)
+        , m_rowNum(row)
+        , m_colNum(col)
+        , m_batchNum(batchNum)
+        , m_rowLen(rowLen)
+        , m_rawMatrixSize(matrixSize)
+    {
+    }
+
     ContinuousMemory<ElementType, DeviceType> m_mem; // 内部数据存储于一维数组，并使用ContinuousMemory维护
     std::size_t m_rowNum;
     std::size_t m_colNum;
@@ -181,11 +192,11 @@ struct LowerAccessImpl<Batch<TElem, DeviceTags::CPU, CategoryTags::Matrix>>
     }
     std::size_t rowLen() const
     {
-        return m_data.m_mem.m_rowLen;
+        return m_data.m_rowLen;
     }
     std::size_t rawMatrixSize() const
     {
-        return m_data.m_mem.m_rawMatrixSize;
+        return m_data.m_rawMatrixSize;
     }
 private:
     Batch<TElem, DeviceTags::CPU, CategoryTags::Matrix> m_data;
