@@ -25,7 +25,7 @@ public:
     using ElementType = typename TData::ElementType;
     using DeviceType = typename TData::DeviceType;
 public:
-    Array(std::size_t row = 0, std::size_t col = 0)
+    Array(std::size_t = 0, std::size_t = 0)
         : m_buffer(new std::vector<TData>())
     {
     }

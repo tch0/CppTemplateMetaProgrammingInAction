@@ -27,6 +27,32 @@ TypePolicyTemplate(PWeightInitializerIs,    InitPolicy, Weight);        // 设�
 TypePolicyTemplate(PBiasInitializerIs,      InitPolicy, Bias);          // 设置偏置初始化器
 TypePolicyTemplate(PRandomGeneratorIs,      InitPolicy, RandomEngine);  // 设置随机数引擎
 
+// VarScaleFiller的策略
+struct VarScaleFillerPolicy
+{
+    using MajorClass = VarScaleFillerPolicy;
+
+    struct DistributionTypeCategory
+    {
+        struct Uniform;
+        struct Normal;
+    };
+    using Distribution = DistributionTypeCategory::Uniform;
+
+    struct ScaleModeTypeCategory
+    {
+        struct FanIn;
+        struct FanOut;
+        struct FanAvg;
+    };
+    using ScaleMode = ScaleModeTypeCategory::FanAvg;
+};
+
+TypePolicyObj(PNormalVarScale,      VarScaleFillerPolicy, Distribution, Normal);
+TypePolicyObj(PUniformVarScale,     VarScaleFillerPolicy, Distribution, Uniform);
+TypePolicyObj(PVarScaleFanIn,       VarScaleFillerPolicy, ScaleMode,    FanIn);
+TypePolicyObj(PVarScaleFanOut,      VarScaleFillerPolicy, ScaleMode,    FanOut);
+TypePolicyObj(PVarScaleFanAvg,      VarScaleFillerPolicy, ScaleMode,    FanAvg);
 
 } // namespace MetaNN
 

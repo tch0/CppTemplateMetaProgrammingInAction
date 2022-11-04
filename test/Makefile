@@ -12,7 +12,7 @@
 # add your own include path/library path/link library to CXXFLAGS
 CXX = g++
 CXXFLAGS += -std=c++20
-CXXFLAGS += -Wall -Wextra -pedantic-errors -Wshadow -Wno-sign-compare -Wno-unused-parameter
+CXXFLAGS += -Wall -Wextra -pedantic-errors -Wshadow -Wno-sign-compare
 # CXXFLAGS += -Wfatal-errors
 CXXFLAGS += -I../MetaNN
 RM = rm

@@ -119,4 +119,8 @@ concept BatchScalarC = IsBatchScalarC<std::remove_cvref_t<T>>;
 template<typename T>
 concept BatchMatrixC = IsBatchMatrixC<std::remove_cvref_t<T>>;
 
+// 用于static_assert
+template<typename T>
+constexpr bool DependencyFalse = false;
+
 } // namespace MetaNN
